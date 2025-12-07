@@ -1,9 +1,7 @@
 //
 // Created by benja on 01/12/2025.
 //
-
-#ifndef AOC_2025_DAY1_H
-#define AOC_2025_DAY1_H
+#pragma once
 
 // +--- std include
 #include <map>
@@ -45,5 +43,3 @@ namespace AoC2025 {
         auto solve() -> std::string override;
     };
 } // AoC2025
-
-#endif //AOC_2025_DAY1_H
