@@ -18,7 +18,7 @@ add_executable(AoC_solver
         project/src/Day1.cpp
         project/src/Day2.cpp
         project/src/Day3.cpp
-#        project/src/Day4.cpp
+        project/src/Day4.cpp
 #        project/src/Day5.cpp
 #        project/src/Day6.cpp
 #        project/src/Day7.cpp
