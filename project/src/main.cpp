@@ -19,7 +19,7 @@
 #include "../inc/Day4.h"
 #include "../inc/Day5.h"
 #include "../inc/Day6.h"
-// #include "../inc/Day7.h"
+#include "../inc/Day7.h"
 
 using namespace std;
 using namespace AoC2025;
@@ -96,7 +96,7 @@ public:
         puzzles.emplace(4, make_unique<Day4>(_logger, _test_data ? "../data/day4_test.txt" : "../data/day4.txt"));
         puzzles.emplace(5, make_unique<Day5>(_logger, _test_data ? "../data/day5_test.txt" : "../data/day5.txt"));
         puzzles.emplace(6, make_unique<Day6>(_logger, _test_data ? "../data/day6_test.txt" : "../data/day6.txt"));
-        // puzzles.emplace(7, make_unique<Day7>(_logger, _test_data ? "../data/day7_test.txt" : "../data/day7.txt"));
+        puzzles.emplace(7, make_unique<Day7>(_logger, _test_data ? "../data/day7_test.txt" : "../data/day7.txt"));
 
         if (_selected_puzzle == Const::ALL_PUZZLE) {
             for (auto& [day, puzzle] : puzzles) {
