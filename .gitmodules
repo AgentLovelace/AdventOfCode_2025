@@ -1,0 +1,9 @@
+[submodule "depts/catch2"]
+	path = depts/catch2
+	url = https://github.com/catchorg/Catch2.git
+[submodule "depts/spdlog"]
+	path = depts/spdlog
+	url = https://github.com/gabime/spdlog.git
+[submodule "depts/argparse"]
+	path = depts/argparse
+	url = https://github.com/p-ranav/argparse.git
