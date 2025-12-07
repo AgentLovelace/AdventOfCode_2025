@@ -17,7 +17,7 @@ add_executable(AoC_solver
         # Puzzle
         project/src/Day1.cpp
         project/src/Day2.cpp
-#        project/src/Day3.cpp
+        project/src/Day3.cpp
 #        project/src/Day4.cpp
 #        project/src/Day5.cpp
 #        project/src/Day6.cpp
@@ -44,7 +44,7 @@ target_link_libraries(AoC_solver PRIVATE
 #        depts/catch2/src
 #)
 
-target_link_libraries(AoC_test PRIVATE
-        Catch2::Catch2WithMain
-)
+#target_link_libraries(AoC_test PRIVATE
+#        Catch2::Catch2WithMain
+#)
 
