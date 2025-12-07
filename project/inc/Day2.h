@@ -5,11 +5,11 @@
 
 // +--- std include
 #include <vector>
+#include <unordered_set>
 
 // +--- Puzzle interface
 #include "Puzzle.h"
 
-using namespace std;
 
 namespace AoC2025 {
 
@@ -22,14 +22,15 @@ namespace AoC2025 {
             Range(const size_t& min, const size_t& max): min(min), max(max) {};
         };
 
-        vector<Range> m_data;
+        std::vector<Range> m_data;
+        std::unordered_set<size_t> m_valid_id_cache;
 
         auto parse() -> void;
         auto compute_range(const Range& range) -> void;
 
         public:
 
-        Day2(LoggerI& logger_, const filesystem::path& input_path_): Puzzle(logger_, input_path_){};
+        Day2(LoggerI& logger_, const std::filesystem::path& input_path_): Puzzle(logger_, input_path_){};
         auto solve() -> std::string override;
     };
 } // AoC2025
