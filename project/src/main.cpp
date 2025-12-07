@@ -14,7 +14,7 @@
 #include "../inc/ConsoleLogger.h"
 #include  "../inc/Puzzle.h"
 #include "../inc/Day1.h"
-// #include "../inc/Day2.h"
+#include "../inc/Day2.h"
 // #include "../inc/Day3.h"
 // #include "../inc/Day4.h"
 // #include "../inc/Day5.h"
@@ -91,7 +91,7 @@ public:
     auto solve() -> void {
         unordered_map<int, unique_ptr<Puzzle>> puzzles{};
         puzzles.emplace(1, make_unique<Day1>(_logger, _test_data ? "../data/day1_test.txt" : "../data/day1.txt"));
-        // puzzles.emplace(2, make_unique<Day2>(_logger, _test_data ? "../data/day2_test.txt" : "../data/day2.txt"));
+        puzzles.emplace(2, make_unique<Day2>(_logger, _test_data ? "../data/day2_test.txt" : "../data/day2.txt"));
         // puzzles.emplace(3, make_unique<Day3>(_logger, _test_data ? "../data/day3_test.txt" : "../data/day3.txt"));
         // puzzles.emplace(4, make_unique<Day4>(_logger, _test_data ? "../data/day4_test.txt" : "../data/day4.txt"));
         // puzzles.emplace(5, make_unique<Day5>(_logger, _test_data ? "../data/day5_test.txt" : "../data/day5.txt"));
@@ -100,14 +100,22 @@ public:
 
         if (_selected_puzzle == Const::ALL_PUZZLE) {
             for (auto& [day, puzzle] : puzzles) {
+                auto start = high_resolution_clock::now();
                 _logger.info(format("Solve puzzle {}...", day));
                 _logger.info(format("{}", puzzle->solve()));
+                auto stop = high_resolution_clock::now();
+                auto duration = duration_cast<milliseconds>(stop - start);
+                _logger.info(format("Took {}ms to solve !", duration.count()));
             }
         }
         else {
             try {
+                auto start = high_resolution_clock::now();
                 _logger.info(format("Solve puzzle {}...", _selected_puzzle));
                 _logger.info(format("{}", puzzles.at(_selected_puzzle)->solve()));
+                auto stop = high_resolution_clock::now();
+                auto duration = duration_cast<milliseconds>(stop - start);
+                _logger.info(format("Took {}ms to solve !", duration.count()));
             }
             catch (const std::out_of_range& access_error) {
                 _logger.error(format("Selected puzzle is not in range of possible puzzle day... INPUT_DAY={}", _selected_puzzle));
@@ -124,18 +132,12 @@ public:
         _logger.info("Welcome to AoC 2025 !");
         parse_args();
         _logger.set_level(_verbose ? Level::DEBUG : Level::INFO);
-        auto start = high_resolution_clock::now();
         solve();
-        auto stop = high_resolution_clock::now();
-        auto duration = duration_cast<milliseconds>(stop - start);
-        _logger.info(format("Took {}ms to solve !", duration.count()));
         _logger.info("Press Enter to continue...");
         cin.ignore();
         std::exit(EXIT_SUCCESS);
     };
 };
-
-
 
 auto main(int argc, char **argv) -> int {
     Main m{argc, argv};
