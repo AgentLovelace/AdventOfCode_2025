@@ -34,17 +34,17 @@ target_link_libraries(AoC_solver PRIVATE
     argparse
 )
 
-#add_executable(AoC_test
-#        project/src/Day4.cpp
-#        project/src/string_lib.cpp
-#        tests/src/test_day_4.cpp
-#)
-#
-#target_include_directories(AoC_test PRIVATE
-#        depts/catch2/src
-#)
+add_executable(AoC_test
+        project/src/Day4.cpp
+        project/src/string_lib.cpp
+        tests/src/test_day_4.cpp
+)
 
-#target_link_libraries(AoC_test PRIVATE
-#        Catch2::Catch2WithMain
-#)
+target_include_directories(AoC_test PRIVATE
+        depts/catch2/src
+)
+
+target_link_libraries(AoC_test PRIVATE
+        Catch2::Catch2WithMain
+)
 
