@@ -43,23 +43,6 @@ namespace AoC2025 {
         }
     }
 
-    // auto Day2::compute_range(const Range& range) -> void {
-    //     m_logger.debug(format("Day2::compute_range(): Compute range {}-{}", range.min, range.max));
-    //     for(auto id=range.min; id<=range.max; ++id) {
-    //
-    //         // check if ID get a repeating pattern
-    //         string id_str = format("{}", id);
-    //         if(const auto[cond, how_may_pattern] = StrLib::hasRepeatingPattern(id_str); cond) {
-    //             m_logger.debug(format("Day2::compute_range(): ID {} got repeating pattern {} time(s).", id, how_may_pattern));
-    //             result_2 += id;
-    //             if(how_may_pattern == 2) {
-    //                 result_1 += id;
-    //             }
-    //         }
-    //
-    //     }
-    // }
-
     auto Day2::compute_range(const Range& range) -> void {
         m_logger.debug(format("Day2::compute_range(): Compute range {}-{}", range.min, range.max));
 
