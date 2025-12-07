@@ -17,7 +17,7 @@
 #include "../inc/Day2.h"
 #include "../inc/Day3.h"
 #include "../inc/Day4.h"
-// #include "../inc/Day5.h"
+#include "../inc/Day5.h"
 // #include "../inc/Day6.h"
 // #include "../inc/Day7.h"
 
@@ -94,7 +94,7 @@ public:
         puzzles.emplace(2, make_unique<Day2>(_logger, _test_data ? "../data/day2_test.txt" : "../data/day2.txt"));
         puzzles.emplace(3, make_unique<Day3>(_logger, _test_data ? "../data/day3_test.txt" : "../data/day3.txt"));
         puzzles.emplace(4, make_unique<Day4>(_logger, _test_data ? "../data/day4_test.txt" : "../data/day4.txt"));
-        // puzzles.emplace(5, make_unique<Day5>(_logger, _test_data ? "../data/day5_test.txt" : "../data/day5.txt"));
+        puzzles.emplace(5, make_unique<Day5>(_logger, _test_data ? "../data/day5_test.txt" : "../data/day5.txt"));
         // puzzles.emplace(6, make_unique<Day6>(_logger, _test_data ? "../data/day6_test.txt" : "../data/day6.txt"));
         // puzzles.emplace(7, make_unique<Day7>(_logger, _test_data ? "../data/day7_test.txt" : "../data/day7.txt"));
 
